@@ -28,6 +28,11 @@ html {
 body {
     margin: 0;
 
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
     font-family:
         "Segoe UI",
         Arial,
@@ -35,6 +40,12 @@ body {
 
     color: var(--navy);
     background: var(--background);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 button,
@@ -489,7 +500,7 @@ a {
        Gör startsidan lägre än hela skärmen.
        Sidfoten kommer därför fram tidigare.
     */
-    min-height: clamp(500px, 64vh, 570px);
+    min-height: 430px;
 
     display: flex;
 
@@ -497,7 +508,7 @@ a {
 
     align-items: flex-start;
 
-    padding-top: clamp(42px, 6vh, 70px);
+    padding-top: 32px;
 
     background:
         radial-gradient(
@@ -1030,42 +1041,37 @@ a {
    SIDFOT
 ========================================================= */
 
+/* =========================================================
+   SIDFOT – KOMPAKT
+========================================================= */
+
 .site-footer {
     width: 100%;
-
     background: #0c172b;
-
     color: #ffffff;
 
-    padding: 55px 40px 0;
+    /* Mindre luft över och under */
+    padding: 18px 40px 0;
 }
 
 .footer-container {
     width: 100%;
-
     max-width: 1300px;
-
     margin: 0 auto;
 
     display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
 
-    grid-template-columns:
-        1.4fr
-        1fr
-        1fr
-        1.3fr;
-
-    gap: 55px;
+    /* Mindre avstånd mellan kolumnerna */
+    gap: 30px;
 }
 
 
-/* Rubriker i sidfoten */
+/* Företagsnamnet */
 
 .footer-column h2 {
-    margin: 0 0 20px;
-
-    font-size: 24px;
-
+    margin: 0 0 5px;
+    font-size: 17px;
     color: #ffffff;
 }
 
@@ -1073,48 +1079,50 @@ a {
     color: var(--blue-light);
 }
 
+
+/* Kolumnrubriker */
+
 .footer-column h3 {
-    margin: 4px 0 20px;
-
-    font-size: 16px;
-
+    margin: 2px 0 11px;
+    font-size: 14px;
     color: #ffffff;
 }
 
 
-/* Text i sidfoten */
+/* Vanlig text */
 
 .footer-column p {
-    margin: 0 0 14px;
-
+    margin: 0 0 7px;
     color: #b8c3d6;
-
-    line-height: 1.7;
-
-    font-size: 14px;
+    line-height: 1.45;
+    font-size: 12px;
 }
+
+
+/* Organisationsnummer */
+
+.footer-org {
+    margin-bottom: 10px !important;
+}
+
+
+/* F-skatt, moms osv. */
 
 .footer-company-info {
-    margin-top: 22px !important;
+    margin-top: 12px !important;
 }
 
 
-/* Länkar i sidfoten */
+/* Länkar */
 
 .footer-column a {
     display: block;
-
     width: fit-content;
-
-    margin-bottom: 12px;
-
+    margin-bottom: 5px;
     color: #b8c3d6;
-
     text-decoration: none;
-
-    font-size: 14px;
-
-    transition: color 0.2s ease;
+    font-size: 11px;
+    line-height: 1.35;
 }
 
 .footer-column a:hover {
@@ -1127,27 +1135,26 @@ a {
 .footer-development {
     display: block;
 
-    margin-top: 4px;
+    margin-top: 3px;
 
     color: #b8c3d6;
 
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .footer-development small {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 3px;
 
     color: var(--blue-light);
 
-    font-size: 10px;
-
+    font-size: 9px;
     font-weight: 700;
 
     text-transform: uppercase;
-
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
 }
 
 
@@ -1155,14 +1162,9 @@ a {
 
 .footer-bottom {
     max-width: 1300px;
-
-    margin: 45px auto 0;
-
-    padding: 22px 0;
-
-    border-top:
-        1px solid
-        rgba(255, 255, 255, 0.12);
+    margin: 14px auto 0;
+    padding: 9px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-bottom p {
@@ -1170,8 +1172,56 @@ a {
 
     color: #8e9aae;
 
-    font-size: 13px;
+    font-size: 11px;
+    line-height: 1.4;
 }
+
+
+/* =========================================================
+   SIDFOT – SURFPLATTA
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-footer {
+        padding: 25px 28px 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 40px;
+    }
+
+}
+
+
+/* =========================================================
+   SIDFOT – MOBIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding: 24px 20px 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .footer-column h2 {
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        padding: 12px 0;
+    }
+
+}
+
+
 
 
 /* =========================================================
@@ -1414,86 +1464,190 @@ a {
 
 }
 
-
-/* =========================================================
+/* ========================================
    MOBIL
-========================================================= */
+======================================== */
 
 @media (max-width: 650px) {
 
+    /* TOPPMENY */
+
     .topbar {
+        min-height: 70px;
         padding: 0 14px;
+        display: flex;
+        align-items: center;
     }
 
     .logo {
+        margin-right: auto;
         font-size: 16px;
-
-        letter-spacing: -0.5px;
-    }
-
-    .language {
-        min-width: 64px;
-
-        height: 40px;
-
-        font-size: 13px;
+        white-space: nowrap;
     }
 
     .menu-toggle {
-        font-size: 25px;
+        display: block;
+        font-size: 26px;
+    }
+
+    .topbar-right {
+        margin-right: 8px;
+    }
+
+    .language {
+        min-width: 58px;
+        height: 38px;
+        font-size: 13px;
     }
 
 
-    /* Startsida */
+    /* MOBILMENY */
+
+    .navigation {
+        display: none;
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 12px 18px 18px;
+
+        background: white;
+
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+
+        flex-direction: column;
+        align-items: stretch;
+
+        z-index: 1000;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .nav-link,
+    .nav-contact-text {
+        width: 100%;
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 13px 4px;
+
+        font-size: 15px;
+
+        text-align: left;
+    }
+
+
+    /* DROPDOWN PÅ MOBIL */
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        padding: 0 0 6px 15px;
+
+        border: 0;
+        box-shadow: none;
+
+        transform: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        display: none;
+    }
+
+    .dropdown:focus-within > .dropdown-menu {
+        display: block;
+    }
+
+
+    /* UNDERMENY PRODUKTER */
+
+    .submenu-menu {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 4px;
+
+        padding: 4px 0 4px 16px;
+
+        border: 0;
+        box-shadow: none;
+
+        background: transparent;
+
+        transform: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        display: none;
+    }
+
+    .submenu:focus-within > .submenu-menu {
+        display: block;
+    }
+
+
+    /* STARTSIDAN */
 
     .hero {
-        min-height: 500px;
-
-        padding-top: 24px;
+        min-height: auto;
+        padding: 30px 15px 35px;
     }
 
     .hero-content {
-        padding:
-            0
-            15px
-            40px;
+        padding: 0;
     }
 
     .date-row {
         margin-bottom: 20px;
-
-        gap: 8px;
-    }
-
-    .calendar-icon {
-        transform: scale(0.82);
     }
 
     .date-row p {
         font-size: 13px;
     }
 
+
+    /* STORA RUBRIKEN */
+
     .hero h1 {
-        max-width: 94vw;
+        max-width: 100%;
 
-        font-size:
-            clamp(
-                40px,
-                12vw,
-                62px
-            );
+        white-space: normal;
 
-        line-height: 0.97;
+        font-size: clamp(38px, 12vw, 58px);
+
+        line-height: 1;
 
         letter-spacing: -0.04em;
-
-        font-weight: 750;
     }
 
-    .tagline {
-        max-width: 430px;
 
-        font-size: 17px;
+    /* TEXTEN UNDER RUBRIKEN */
+
+    .tagline {
+        max-width: 100%;
+
+        padding: 0 10px;
+
+        font-size: 16px;
+
+        line-height: 1.5;
     }
 
     .desktop-break {
@@ -1501,108 +1655,117 @@ a {
     }
 
 
-    /* Vågor */
+    /* VÅGOR */
 
     .wave {
-        width: 250px;
-
-        opacity: 0.10;
+        width: 220px;
+        opacity: 0.08;
     }
 
     .wave-left {
-        left: -160px;
+        left: -155px;
     }
 
     .wave-right {
-        right: -160px;
+        right: -155px;
     }
 
 
-    /* Integritetssidor */
-
-    .privacy-container {
-        margin: 20px 15px;
-
-        padding: 30px 22px;
-    }
-
-    .privacy-container h2 {
-        font-size: 1.7rem;
-    }
-
-    .privacy-container h3 {
-        font-size: 1.2rem;
-    }
-
-
-    /* Popup */
+    /* POPUP */
 
     .about-modal {
-        padding: 15px;
+        padding: 14px;
     }
 
     .about-modal-content {
-        padding:
-            40px
-            25px
-            30px;
+        width: 100%;
+
+        max-height: 85vh;
+
+        padding: 38px 22px 25px;
+
+        border-radius: 14px;
     }
 
     .about-modal-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .about-modal-content p {
+        font-size: 14px;
     }
 
 
-    /* Sidfot */
+    /* INTEGRITETSSIDOR */
+
+    .privacy-container {
+        margin: 15px 10px;
+
+        padding: 25px 18px;
+    }
+
+    .privacy-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .privacy-container h3 {
+        font-size: 1.15rem;
+    }
+
+    .privacy-container p,
+    .privacy-container li {
+        font-size: 14px;
+    }
+
+
+    /* SIDFOT */
 
     .site-footer {
-        padding:
-            45px
-            24px
-            0;
+        padding: 20px 20px 0;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 20px;
     }
 
     .footer-column h2 {
-        font-size: 21px;
+        font-size: 17px;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 8px;
+
+        font-size: 14px;
+    }
+
+    .footer-column p,
+    .footer-column a,
+    .footer-development {
+        font-size: 12px;
     }
 
     .footer-bottom {
-        margin-top: 35px;
+        margin-top: 18px;
+
+        padding: 10px 0;
     }
 
 }
 
+/* ========================================
+   KLICKBARA MOBILMENYER
+======================================== */
 
-/* =========================================================
-   MYCKET SMÅ MOBILER
-========================================================= */
+@media (max-width: 1000px) {
 
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: 14px;
+    .dropdown.mobile-open > .dropdown-menu {
+        display: block;
     }
 
-    .language {
-        display: none;
-    }
-
-    .hero {
-        min-height: 470px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .tagline {
-        font-size: 16px;
+    .submenu.mobile-open > .submenu-menu {
+        display: block;
     }
 
 }
