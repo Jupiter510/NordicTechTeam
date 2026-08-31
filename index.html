@@ -1,1 +1,522 @@
-<h1>NordicTechTeam</h1>
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NordicTechTeam AB</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         TOPPMENY
+    ========================================= -->
+
+    <header class="topbar">
+
+        <a href="#" class="logo">
+            Nordic<span>Tech</span>Team AB
+        </a>
+
+        <!-- Hamburgermeny för mobil -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Öppna meny"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <!-- NAVIGATION -->
+        <nav class="navigation" id="mainNavigation">
+
+
+            <!-- PRODUKTER -->
+            <div class="dropdown">
+
+                <button class="nav-link">
+                    Produkter
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="dropdown-menu products-menu">
+
+
+                    <!-- Publicerade -->
+                    <div class="submenu">
+
+                        <button class="submenu-button">
+                            Publicerade
+                            <span>›</span>
+                        </button>
+
+                        <div class="submenu-menu">
+
+                            <a
+                                href="https://hundpromenad.se"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Hundpromenad.se
+                            </a>
+
+                            <a
+                                href="https://nosbox.se"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Nosbox.se
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Under utveckling -->
+                    <div class="submenu">
+
+                        <button class="submenu-button">
+                            Under utveckling
+                            <span>›</span>
+                        </button>
+
+                        <div class="submenu-menu">
+
+                            <div class="product-coming-soon">
+                                <span>
+                                    Flashkort – öva och lär
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FÖRETAGET -->
+            <div class="dropdown">
+
+                <button class="nav-link">
+                    Företaget
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="#" id="openAbout">
+                        Om NordicTechTeam
+                    </a>
+
+                    <a href="#" id="openIdea">
+                        Vår idé
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TJÄNSTER -->
+            <div class="dropdown">
+
+                <button class="nav-link">
+                    Tjänster
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="#">
+                        Apputveckling
+                    </a>
+
+                    <a href="#">
+                        Digitala lösningar
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- INTEGRITET & SÄKERHET -->
+            <div class="dropdown">
+
+                <button class="nav-link">
+                    Integritet & säkerhet
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <a href="integritet.html">
+                        Webbplatsens integritetspolicy
+                    </a>
+
+                    <a href="flashcard_integritet.html">
+                        Flashkort – integritetspolicy
+                    </a>
+
+                    <a href="cookies.html">
+                        Cookieinformation
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Kontakt i menyn -->
+            <a href="#kontakt" class="nav-contact-text">
+                Kontakt
+            </a>
+
+        </nav>
+
+
+        <!-- HÖGER DEL -->
+        <div class="topbar-right">
+
+            <button class="language">
+                SV
+                <span>⌄</span>
+            </button>            
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         HUVUDINNEHÅLL
+    ========================================= -->
+
+    <main>
+
+        <section class="hero">
+
+
+            <!-- Vänster våg -->
+            <div class="wave wave-left">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <!-- Höger våg -->
+            <div class="wave wave-right">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <div class="hero-content">
+
+
+                <!-- Datum -->
+                <div class="date-row">
+
+                    <div class="calendar-icon">
+
+                        <div class="calendar-top"></div>
+
+                        <div class="calendar-body">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <p id="currentDate"></p>
+
+                </div>
+
+
+                <!-- Huvudrubrik -->
+                <h1>
+                    Nordic<span>Tech</span>Team AB
+                </h1>
+
+
+                <div class="title-line"></div>
+
+
+                <!-- Text -->
+                <p class="tagline">
+                    Digitala produkter som gör teknik enklare,
+                    <br class="desktop-break">
+                    tydligare och mer användbar.
+                </p>
+
+
+                
+
+            </div>
+
+        </section>
+
+
+        <!-- Platser för framtida innehåll -->
+        <section id="appar"></section>
+
+        <section id="kontakt"></section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         SIDFOT
+    ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <!-- FÖRETAGET -->
+            <div class="footer-column footer-company">
+
+                <h2>
+                    Nordic<span>Tech</span>Team AB
+                </h2>
+                <p class="footer-company-info">
+                    Sverige<br>
+                    Org. nr: 559503-8687<br>
+                    Godkänd för F-skatt<br>
+                    Registrerad för moms
+                </p>
+
+                 <p>
+                    Digitala produkter som gör teknik enklare,
+                    tydligare och mer användbar.
+                </p>
+
+            </div>
+
+
+            <!-- KONTAKT -->
+            <div class="footer-column">
+
+                <h3>Kontakt</h3>
+
+                <p>
+                    NordicTechTeam AB
+                </p>
+
+                <a href="mailto:kontakt@nordictechteam.com">
+                    kontakt@nordictechteam.com
+                </a>
+
+            </div>
+
+
+            <!-- PRODUKTER -->
+            <div class="footer-column">
+
+                <h3>Produkter</h3>
+
+                <a
+                    href="https://hundpromenad.se"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    hundpromenad.se
+                </a>
+
+                <a
+                    href="https://nosbox.se"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    nosbox.se
+                </a>
+
+                <span class="footer-development">
+                    Flashkort – öva och lär
+
+                    <small>
+                        Under utveckling
+                    </small>
+                </span>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="footer-column">
+
+                <h3>Information</h3>
+
+                <a href="integritet.html">
+                    Webbplatsens integritetspolicy
+                </a>
+
+                <a href="flashcard_integritet.html">
+                    Flashkort – integritetspolicy
+                </a>
+
+                <a href="cookies.html">
+                    Cookieinformation
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Nedersta raden -->
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 NordicTechTeam AB.
+                Alla rättigheter förbehållna.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         POPUP – OM NORDICTECHTEAM
+    ========================================= -->
+
+    <div
+        class="about-modal"
+        id="aboutModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="aboutTitle"
+    >
+
+        <div class="about-modal-content">
+
+            <button
+                class="about-modal-close"
+                id="closeAbout"
+                aria-label="Stäng"
+            >
+                &times;
+            </button>
+
+
+            <h2
+                class="modal-blue-title"
+                id="aboutTitle"
+            >
+                Om NordicTechTeam AB
+            </h2>
+
+
+            <p>
+                NordicTechTeam AB är ett svenskt teknikföretag
+                med fokus på utveckling av digitala lösningar
+                och applikationer.
+            </p>
+
+            <p>
+                Vi utvecklar användarvänliga digitala verktyg
+                med målet att göra teknik enkel, tillgänglig
+                och användbar i vardagen.
+            </p>
+
+            <p>
+                Vårt arbete omfattar bland annat utveckling
+                av appar och programvara inom lärande,
+                produktivitet och digital tillgänglighet.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================
+         POPUP – VÅR IDÉ
+    ========================================= -->
+
+    <div
+        class="about-modal"
+        id="ideaModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ideaTitle"
+    >
+
+        <div class="about-modal-content">
+
+            <button
+                class="about-modal-close"
+                id="closeIdea"
+                aria-label="Stäng"
+            >
+                &times;
+            </button>
+
+
+            <h2
+                class="modal-blue-title"
+                id="ideaTitle"
+            >
+                Vår idé
+            </h2>
+
+
+            <p>
+                Vår idé är att skapa digitala produkter som
+                löser verkliga problem och gör vardagen enklare.
+            </p>
+
+            <p>
+                Vi vill utveckla lösningar som är tydliga,
+                användarvänliga och lätta att förstå,
+                utan onödig komplexitet.
+            </p>
+
+            <p>
+                Teknik ska vara ett hjälpmedel. Därför utgår
+                vi från användarens behov och fokuserar på
+                funktioner som faktiskt tillför värde.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

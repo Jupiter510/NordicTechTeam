@@ -1,0 +1,1608 @@
+/* =========================================================
+   NORDICTECHTEAM AB
+   HUVUDSTIL
+========================================================= */
+
+:root {
+    --blue: #1768e5;
+    --blue-light: #6c9ff5;
+    --navy: #0c172b;
+    --text: #34435a;
+    --background: #f8fbff;
+    --line: #e9eef5;
+}
+
+
+/* =========================================================
+   GRUNDINSTÄLLNINGAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--navy);
+    background: var(--background);
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   TOPPMENY
+========================================================= */
+
+.topbar {
+    min-height: 92px;
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(230px, 1fr)
+        auto
+        minmax(110px, 1fr);
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--line);
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGOTYP
+========================================================= */
+
+.logo {
+    justify-self: start;
+
+    color: var(--navy);
+
+    text-decoration: none;
+
+    font-size: clamp(18px, 1.6vw, 24px);
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(14px, 1.8vw, 30px);
+}
+
+.nav-link {
+    border: 0;
+
+    background: transparent;
+
+    padding: 12px 3px;
+
+    font-family: inherit;
+
+    font-size: clamp(14px, 1vw, 17px);
+
+    font-weight: 600;
+
+    color: #111827;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.arrow {
+    margin-left: 5px;
+
+    font-size: 13px;
+}
+
+.nav-contact-text {
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: clamp(14px, 1vw, 17px);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 46px;
+
+    left: 50%;
+
+    width: 230px;
+
+    padding: 9px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9f1;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(22, 35, 55, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateX(-50%)
+        translateY(-6px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+
+    z-index: 500;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+.dropdown-menu > a {
+    display: block;
+
+    padding: 11px 13px;
+
+    color: #263449;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+}
+
+.dropdown-menu > a:hover {
+    background: #f2f6fc;
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   PRODUKTMENY – UNDERMENYER
+========================================================= */
+
+.products-menu {
+    width: 230px;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu-button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #263449;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.submenu-button:hover {
+    background: #f2f6fc;
+
+    color: var(--blue);
+}
+
+.submenu-button span {
+    margin-left: 15px;
+
+    font-size: 18px;
+
+    color: #7e8998;
+}
+
+.submenu-menu {
+    position: absolute;
+
+    top: -9px;
+
+    left: calc(100% + 8px);
+
+    width: 250px;
+
+    padding: 9px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9f1;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(22, 35, 55, 0.14);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateX(-7px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+
+    z-index: 600;
+}
+
+.submenu:hover > .submenu-menu,
+.submenu:focus-within > .submenu-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(0);
+}
+
+.submenu-menu a {
+    display: block;
+
+    padding: 11px 13px;
+
+    color: #263449;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+}
+
+.submenu-menu a:hover {
+    background: #f2f6fc;
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   PRODUKT UNDER UTVECKLING
+========================================================= */
+
+.product-coming-soon {
+    padding: 11px 13px;
+
+    border-radius: 7px;
+
+    color: #263449;
+
+    font-size: 14px;
+}
+
+.product-coming-soon span {
+    display: block;
+}
+
+.product-coming-soon small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   HÖGER DEL AV TOPPMENYN
+========================================================= */
+
+.topbar-right {
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.language {
+    height: 48px;
+
+    min-width: 82px;
+
+    border: 1px solid #d9e0ea;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #172033;
+
+    cursor: pointer;
+}
+
+.language span {
+    margin-left: 7px;
+}
+
+
+/* Finns kvar om vi vill använda blå kontaktknapp senare */
+
+.contact-button {
+    height: 48px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--blue);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 650;
+
+    box-shadow:
+        0 8px 20px
+        rgba(23, 104, 229, 0.2);
+}
+
+
+/* =========================================================
+   HAMBURGERMENY
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    color: var(--navy);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO / STARTSIDAN
+========================================================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    /*
+       Gör startsidan lägre än hela skärmen.
+       Sidfoten kommer därför fram tidigare.
+    */
+    min-height: clamp(500px, 64vh, 570px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding-top: clamp(42px, 6vh, 70px);
+
+    background:
+        radial-gradient(
+            circle at 80% 38%,
+            rgba(175, 205, 255, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(210, 226, 255, 0.28),
+            transparent 32%
+        ),
+        linear-gradient(
+            120deg,
+            #fbfdff 0%,
+            #f4f8ff 52%,
+            #eef5ff 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 1600px;
+
+    padding:
+        0
+        clamp(18px, 4vw, 50px)
+        45px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DATUM
+========================================================= */
+
+.date-row {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: clamp(24px, 3vw, 38px);
+
+    color: #536177;
+}
+
+.date-row p {
+    margin: 0;
+
+    font-size: clamp(14px, 1.3vw, 18px);
+
+    font-weight: 450;
+}
+
+
+/* =========================================================
+   KALENDERIKON
+========================================================= */
+
+.calendar-icon {
+    width: 24px;
+
+    height: 24px;
+
+    border: 2px solid var(--blue);
+
+    border-radius: 3px;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.calendar-top {
+    position: absolute;
+
+    left: -2px;
+
+    top: 5px;
+
+    width: 24px;
+
+    border-top: 2px solid var(--blue);
+}
+
+.calendar-body {
+    position: absolute;
+
+    top: 10px;
+
+    left: 5px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 4px);
+
+    gap: 4px;
+}
+
+.calendar-body span {
+    width: 4px;
+
+    height: 4px;
+
+    background: var(--blue);
+
+    border-radius: 1px;
+}
+
+
+/* =========================================================
+   STORA RUBRIKEN
+========================================================= */
+
+.hero h1 {
+    margin: 0 auto;
+
+    max-width: 96vw;
+
+    color: var(--navy);
+
+    font-size: clamp(54px, 7.8vw, 132px);
+
+    line-height: 0.92;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   LINJEN UNDER RUBRIKEN
+========================================================= */
+
+.title-line {
+    width: 46px;
+
+    height: 3px;
+
+    margin:
+        clamp(24px, 2.7vw, 35px)
+        auto
+        clamp(18px, 2vw, 26px);
+
+    background: #79a7ef;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.tagline {
+    margin: 0 auto;
+
+    max-width: 760px;
+
+    color: #526078;
+
+    font-size: clamp(18px, 1.6vw, 22px);
+
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   KNAPPAR
+   Finns kvar ifall vi vill använda dem senare.
+========================================================= */
+
+.hero-buttons {
+    margin-top: clamp(28px, 3vw, 40px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+.button {
+    min-width: 225px;
+
+    min-height: 60px;
+
+    padding: 0 26px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 650;
+}
+
+.button-primary {
+    color: #ffffff;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 12px 30px
+        rgba(23, 104, 229, 0.20);
+}
+
+.button-secondary {
+    color: var(--blue);
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1.5px solid var(--blue);
+}
+
+
+/* =========================================================
+   DEKORATIVA VÅGOR
+========================================================= */
+
+.wave {
+    position: absolute;
+
+    width: min(430px, 35vw);
+
+    height: 420px;
+
+    opacity: 0.20;
+
+    pointer-events: none;
+}
+
+.wave-left {
+    left: -170px;
+
+    bottom: -40px;
+
+    transform: rotate(-8deg);
+}
+
+.wave-right {
+    right: -170px;
+
+    bottom: -20px;
+
+    transform:
+        rotate(8deg)
+        scaleX(-1);
+}
+
+.wave span {
+    position: absolute;
+
+    width: 100%;
+
+    height: 170px;
+
+    border: 1px solid #3f82ec;
+
+    border-radius: 50%;
+}
+
+.wave span:nth-child(1) {
+    top: 30px;
+}
+
+.wave span:nth-child(2) {
+    top: 45px;
+}
+
+.wave span:nth-child(3) {
+    top: 60px;
+}
+
+.wave span:nth-child(4) {
+    top: 75px;
+}
+
+.wave span:nth-child(5) {
+    top: 90px;
+}
+
+.wave span:nth-child(6) {
+    top: 105px;
+}
+
+.wave span:nth-child(7) {
+    top: 120px;
+}
+
+.wave span:nth-child(8) {
+    top: 135px;
+}
+
+
+/* =========================================================
+   SCROLLINDIKATOR
+   Om HTML-koden är borttagen syns den inte.
+========================================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.mouse {
+    width: 28px;
+
+    height: 44px;
+
+    border: 2px solid #8db2f2;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 8px;
+}
+
+.mouse span {
+    width: 5px;
+
+    height: 5px;
+
+    background: var(--blue);
+
+    border-radius: 50%;
+}
+
+.chevron {
+    width: 12px;
+
+    height: 12px;
+
+    border-right: 2px solid var(--blue);
+
+    border-bottom: 2px solid var(--blue);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   INTEGRITETSSIDOR
+========================================================= */
+
+.privacy-page {
+    background-color: #f5f7fa;
+}
+
+.privacy-container {
+    max-width: 950px;
+
+    margin: 50px auto;
+
+    padding: 50px 65px;
+
+    background-color: #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.06);
+}
+
+.privacy-container h2 {
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    font-size: 2.2rem;
+}
+
+.privacy-container h3 {
+    margin-top: 35px;
+
+    margin-bottom: 18px;
+
+    font-size: 1.35rem;
+}
+
+.privacy-container p,
+.privacy-container li {
+    line-height: 1.7;
+}
+
+.privacy-container p {
+    margin-bottom: 18px;
+}
+
+.privacy-container a {
+    color: #123b6d;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   POPUP – OM FÖRETAGET / VÅR IDÉ
+========================================================= */
+
+.about-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(5, 18, 40, 0.45);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+}
+
+.about-modal.show {
+    display: flex;
+}
+
+.about-modal-content {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 50px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.20);
+}
+
+.about-modal-content h2 {
+    margin: 8px 0 24px;
+
+    font-size: 2rem;
+}
+
+.about-modal-content p {
+    line-height: 1.7;
+
+    color: #46556d;
+}
+
+.modal-blue-title {
+    color: var(--blue) !important;
+}
+
+.about-modal-close {
+    position: absolute;
+
+    top: 16px;
+
+    right: 20px;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    color: #07152d;
+}
+
+
+/* =========================================================
+   SIDFOT
+========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    background: #0c172b;
+
+    color: #ffffff;
+
+    padding: 55px 40px 0;
+}
+
+.footer-container {
+    width: 100%;
+
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr
+        1.3fr;
+
+    gap: 55px;
+}
+
+
+/* Rubriker i sidfoten */
+
+.footer-column h2 {
+    margin: 0 0 20px;
+
+    font-size: 24px;
+
+    color: #ffffff;
+}
+
+.footer-column h2 span {
+    color: var(--blue-light);
+}
+
+.footer-column h3 {
+    margin: 4px 0 20px;
+
+    font-size: 16px;
+
+    color: #ffffff;
+}
+
+
+/* Text i sidfoten */
+
+.footer-column p {
+    margin: 0 0 14px;
+
+    color: #b8c3d6;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.footer-company-info {
+    margin-top: 22px !important;
+}
+
+
+/* Länkar i sidfoten */
+
+.footer-column a {
+    display: block;
+
+    width: fit-content;
+
+    margin-bottom: 12px;
+
+    color: #b8c3d6;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+
+/* Flashkort – under utveckling */
+
+.footer-development {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #b8c3d6;
+
+    font-size: 14px;
+}
+
+.footer-development small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--blue-light);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* Nedersta raden */
+
+.footer-bottom {
+    max-width: 1300px;
+
+    margin: 45px auto 0;
+
+    padding: 22px 0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #8e9aae;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MINDRE LAPTOP
+========================================================= */
+
+@media (max-width: 1300px) {
+
+    .topbar {
+        padding: 0 24px;
+
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+    }
+
+    .navigation {
+        gap: 18px;
+    }
+
+    .topbar-right {
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 6.4vw, 82px);
+    }
+
+}
+
+
+/* =========================================================
+   SURFPLATTA / MINDRE SKÄRM
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .topbar {
+        min-height: 76px;
+
+        display: flex;
+
+        align-items: center;
+
+        padding: 0 18px;
+    }
+
+    .logo {
+        margin-right: auto;
+
+        font-size: 17px;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        order: 3;
+    }
+
+    .topbar-right {
+        order: 2;
+
+        margin-right: 8px;
+    }
+
+    .contact-button {
+        display: none;
+    }
+
+
+    /* Mobilnavigation */
+
+    .navigation {
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 14px 18px 18px;
+
+        background: #ffffff;
+
+        border-top: 1px solid var(--line);
+
+        border-bottom: 1px solid var(--line);
+
+        box-shadow:
+            0 15px 35px
+            rgba(15, 30, 50, 0.08);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .nav-link,
+    .nav-contact-text {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 13px 4px;
+
+        font-size: 15px;
+
+        text-align: left;
+    }
+
+
+    /* Dropdown i mobilmenyn */
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        padding:
+            0
+            0
+            6px
+            15px;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border: 0;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        display: none;
+    }
+
+    .dropdown:hover > .dropdown-menu,
+    .dropdown:focus-within > .dropdown-menu {
+        display: block;
+
+        transform: none;
+    }
+
+
+    /* Produkt-undermenyer på mobil */
+
+    .submenu-menu {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 4px;
+
+        padding:
+            4px
+            0
+            4px
+            16px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+        display: none;
+    }
+
+    .submenu:hover > .submenu-menu,
+    .submenu:focus-within > .submenu-menu {
+        display: block;
+
+        transform: none;
+    }
+
+
+    /* Startsida */
+
+    .hero {
+        min-height: 540px;
+
+        padding-top: 34px;
+    }
+
+    .hero-content {
+        padding-bottom: 45px;
+    }
+
+    .date-row {
+        margin-bottom: 24px;
+    }
+
+    .hero h1 {
+        white-space: normal;
+
+        max-width: 92vw;
+
+        font-size: clamp(44px, 8vw, 72px);
+
+        line-height: 0.96;
+
+        letter-spacing: -0.045em;
+    }
+
+
+    /* Sidfot två kolumner */
+
+    .footer-container {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBIL
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .topbar {
+        padding: 0 14px;
+    }
+
+    .logo {
+        font-size: 16px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .language {
+        min-width: 64px;
+
+        height: 40px;
+
+        font-size: 13px;
+    }
+
+    .menu-toggle {
+        font-size: 25px;
+    }
+
+
+    /* Startsida */
+
+    .hero {
+        min-height: 500px;
+
+        padding-top: 24px;
+    }
+
+    .hero-content {
+        padding:
+            0
+            15px
+            40px;
+    }
+
+    .date-row {
+        margin-bottom: 20px;
+
+        gap: 8px;
+    }
+
+    .calendar-icon {
+        transform: scale(0.82);
+    }
+
+    .date-row p {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        max-width: 94vw;
+
+        font-size:
+            clamp(
+                40px,
+                12vw,
+                62px
+            );
+
+        line-height: 0.97;
+
+        letter-spacing: -0.04em;
+
+        font-weight: 750;
+    }
+
+    .tagline {
+        max-width: 430px;
+
+        font-size: 17px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+
+    /* Vågor */
+
+    .wave {
+        width: 250px;
+
+        opacity: 0.10;
+    }
+
+    .wave-left {
+        left: -160px;
+    }
+
+    .wave-right {
+        right: -160px;
+    }
+
+
+    /* Integritetssidor */
+
+    .privacy-container {
+        margin: 20px 15px;
+
+        padding: 30px 22px;
+    }
+
+    .privacy-container h2 {
+        font-size: 1.7rem;
+    }
+
+    .privacy-container h3 {
+        font-size: 1.2rem;
+    }
+
+
+    /* Popup */
+
+    .about-modal {
+        padding: 15px;
+    }
+
+    .about-modal-content {
+        padding:
+            40px
+            25px
+            30px;
+    }
+
+    .about-modal-content h2 {
+        font-size: 1.6rem;
+    }
+
+
+    /* Sidfot */
+
+    .site-footer {
+        padding:
+            45px
+            24px
+            0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-column h2 {
+        font-size: 21px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   MYCKET SMÅ MOBILER
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .language {
+        display: none;
+    }
+
+    .hero {
+        min-height: 470px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+}
