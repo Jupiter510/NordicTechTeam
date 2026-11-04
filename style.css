@@ -904,6 +904,11 @@ a {
    INTEGRITETSSIDOR
 ========================================================= */
 
+/* Marginal för företagsnamnet på integritetssidorna */
+.privacy-page header {
+    padding: 15px 24px;
+}
+
 .privacy-page {
     background-color: #f5f7fa;
 }
